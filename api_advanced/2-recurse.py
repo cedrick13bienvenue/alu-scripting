@@ -13,7 +13,11 @@ def recurse(subreddit, hot_list=[], after=""):
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {"User-Agent": "alu-scripting/1.0 by cedrick13bienvenue"}
     params = {"limit": 100, "after": after}
-    response = requests.get(url, headers=headers, params=params)
+    response = requests.get(
+        url, headers=headers, params=params, allow_redirects=False)
+
+    if response.status_code != 200:
+        return None
 
     data = response.json().get("data", {})
     for post in data.get("children", []):
