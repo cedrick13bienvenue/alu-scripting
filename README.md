@@ -2,6 +2,11 @@
 
 Shell, Python, and scripting projects for the ALU Web Infrastructure track.
 
+## Projects
+| Project | Description |
+| --- | --- |
+| `api_advanced` | Python scripts that query the Reddit API: subscriber counts, hot post listings, pagination, and keyword counting |
+
 ## Resources
 - [Reddit API Documentation](https://www.reddit.com/dev/api/)
 - [Query String](https://en.wikipedia.org/wiki/Query_string)
