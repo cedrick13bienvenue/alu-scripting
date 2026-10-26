@@ -34,3 +34,8 @@ def count_words(subreddit, word_list, after="", counts=None):
     after = data.get("after")
     if after is not None:
         return count_words(subreddit, word_list, after, counts)
+
+    results = [(word, total) for word, total in counts.items() if total > 0]
+    results.sort(key=lambda pair: (-pair[1], pair[0]))
+    for word, total in results:
+        print("{}: {}".format(word, total))
